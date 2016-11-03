@@ -24,3 +24,4 @@ try:
     print object_2.name
 except AttributeError:
     print NameError
+
