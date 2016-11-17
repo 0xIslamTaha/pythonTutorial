@@ -1,9 +1,5 @@
 # Goal: Define the inheritance concept
-# You can re-use the a class (super class) inside another class (sub class).
-# sub-class have all things inside the super-class
-# sub-class can over write any method inside the super class
-# sub-class object's attributes are the attributes of super-class objects and the new attributes which are defined
-# inside the sub-class
+    # Concept_1 : You can re-use the parent class (super class) methods and variables inside another class (sub class).
 
 
 class Human(object):
@@ -15,8 +11,6 @@ class Human(object):
         self.job = job
 
     def return_full_description(self):
-        # call static method inside the regular method
-        self.get_copy_rights()
         return [self.name, self.mail, self.job]
 
     @classmethod
@@ -34,45 +28,11 @@ class Human(object):
         print 'Copy rights : Islam Taha'
 
 
-##############################################################################################################
 # Inheritance from a super class
-class Developer_1(Human):
+class Developer(Human):
     pass
 
 
-print '# Create a developer object class will automatically call the __init__ method from the Developer_1 class, ' \
-      'If there is no __init__ indie it, Will look for __init__ inside the super class. '
-
-developer_object_1 = Developer_1('Islam Taha', 'islamtaha2012@gmail.com', "Automation Software Test")
-print developer_object_1.return_full_description()
-print '\n'
-
-##############################################################################################################
-
-##############################################################################################################
-# Inheritance from a super class
-# Over write the __init__method
-class Developer_2(Human):
-    # over write the __init__ method
-    def __init__(self):
-        print 'overwrite the super class init method'
-
-developer_object_2 = Developer_2()
-
-
-##############################################################################################################
-
-##############################################################################################################
-# Inheritance from a super class
-# update the __init__ method
-class Developer_3(Human):
-    # over write the __init__ method
-    def __init__(self, name, mail, job):
-        super(Developer_3, self).__init__(name, mail, job)
-        print 'overwrite the super calss init method'
-
-print 'Over write the __init__ method'
-developer_object_3 = Developer_3('Islam Taha', 'islamtaha2012@gmail.com', "Automation Software Test")
-print '# use a method from the super class'
-print developer_object_3.return_full_description()
-##############################################################################################################
+print '# Create a developer object class will automatically call the __init__ method from the Developer class, ' \
+      'If there is no __init__ inside it, it will look for __init__ inside the super class. '
+developer_object = Developer('Islam Taha', 'islamtaha2012@gmail.com', "Automation Software Test")

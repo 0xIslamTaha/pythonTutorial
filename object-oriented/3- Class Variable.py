@@ -1,6 +1,7 @@
 # Goals
-# Define the class variable
-
+    # Define the class variable
+    # Note that: The value of the class variable will be shared between all objects.
+    # If you overwrite this value for any object (Polymorphism), This object only have this new value.
 
 # Create a class
 class Human(object):
@@ -32,3 +33,19 @@ object_2 = Human(0, 0, 0)
 print object_1.General_Info
 print object_2.General_Info
 print Human.General_Info
+print '\n'
+
+# Edit class variable for each object is equal to overwrite this object attribute
+object_1.General_Info = 'object_1 Edit version'
+# Call Calls Variable
+print object_1.General_Info # This will call the modified one of object_1
+print object_2.General_Info # This will call the original one
+print Human.General_Info    # This will call the original one
+print '\n'
+
+# Edit class variable for each object is equal to overwrite this object attribute
+Human.General_Info = 'object_1 Edit version'
+# Call Calls Variable
+print object_1.General_Info # This will call the modified one of object_1
+print object_2.General_Info # This will call the original one
+print Human.General_Info    # This will call the original one

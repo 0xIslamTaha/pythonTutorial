@@ -31,4 +31,3 @@ class Human(object):
 
 object_1 = Human('Islam Taha', 'islamtaha2012@gmail.com', "Automation Software Test")
 print object_1.return_full_description()
-
