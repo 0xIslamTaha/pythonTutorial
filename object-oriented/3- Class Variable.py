@@ -24,6 +24,10 @@ class Human(object):
         # Notes : Calling the class Variable using <self> will create an object variable with the same name
         self.General_Info = Human.General_Info
 
+    def check_value(self):
+        print self.General_Info + 'Hello'
+
+
 # Create objects from this class
 # You have to bypass all values for the __init__ method.
 object_1 = Human('Islam Taha', 'islamtaha2012@gmail.com', "Automation Software Test")
@@ -39,6 +43,7 @@ print '\n'
 object_1.General_Info = 'object_1 Edit version'
 # Call Calls Variable
 print object_1.General_Info # This will call the modified one of object_1
+object_1.check_value()
 print object_2.General_Info # This will call the original one
 print Human.General_Info    # This will call the original one
 print '\n'
