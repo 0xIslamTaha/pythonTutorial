@@ -1,17 +1,9 @@
-'''
-Steps :
-    1- Create a queue
-    2- Put jobs inside the queue
-    3- create work() method:
-        - get the job
-        - Process the job
-        - raise task_done
-    4- Create and start the threads
-'''
-
 import Queue
 import threading
 import requests
+
+def complex_job(start_number):
+    pass
 
 # Create queue
 q = Queue.Queue()
@@ -26,7 +18,6 @@ def work():
     # make sure that there is jobs
     while not q.empty():
         # pop from the queue
-        # note it must be your first command in the loop
         url = q.get()
 
         # start job processing
@@ -42,11 +33,3 @@ for _ in range(2):
     thread = threading.Thread(target=work)
     # start the thread
     thread.start()
-
-for _ in range(10):
-    print "I'm working in parallel with threads too"
-
-# If You need to block code until the queue is empty.
-q.join()
-for _ in range(10):
-    print ('I have to wait until the queue be empty')
