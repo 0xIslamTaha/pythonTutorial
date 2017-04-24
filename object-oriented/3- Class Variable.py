@@ -9,6 +9,9 @@ class Human(object):
     # Shared between all objects
     General_Info = 'PythonTutorial-BY-IslamTaha'
 
+    # global list
+    global_list = []
+
     # Initialization method.
     # This is a constructor method which is called by default once you create an object from this class
     def __init__(self, name, mail, job):
@@ -40,7 +43,7 @@ print Human.General_Info
 print '\n'
 
 # Edit class variable for each object is equal to overwrite this object attribute
-object_1.General_Info = 'object_1 Edit version'
+object_1.General_Info = 'object_1 Edit version '
 # Call Calls Variable
 print object_1.General_Info # This will call the modified one of object_1
 object_1.check_value()
@@ -49,8 +52,16 @@ print Human.General_Info    # This will call the original one
 print '\n'
 
 # Edit class variable for each object is equal to overwrite this object attribute
-Human.General_Info = 'object_1 Edit version'
+Human.General_Info = 'Class Edit version'
 # Call Calls Variable
 print object_1.General_Info # This will call the modified one of object_1
 print object_2.General_Info # This will call the original one
 print Human.General_Info    # This will call the original one
+
+# Global list
+object_1.global_list.append('1')
+object_2.global_list.append('2')
+Human.global_list.append('3')
+print object_1.global_list
+print object_2.global_list
+print Human.global_list
